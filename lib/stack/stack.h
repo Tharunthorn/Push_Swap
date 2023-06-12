@@ -16,4 +16,8 @@ void	swap_b(t_stack **stack_b);
 
 void	swap_ab(t_stack **stack_a, t_stack **stack_b);
 
+void	push_a(t_stack **stack_a, t_stack **stack_b);
+
+void	push_b(t_stack **stack_a, t_stack **stack_b);
+
 #endif
