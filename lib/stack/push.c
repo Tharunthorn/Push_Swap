@@ -6,7 +6,7 @@
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 01:00:08 by tharunthorn       #+#    #+#             */
-/*   Updated: 2023/06/13 01:08:47 by tharunthorn      ###   ########.fr       */
+/*   Updated: 2023/06/13 15:28:37 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,4 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("pb\n");
 	return ;
 }
+
