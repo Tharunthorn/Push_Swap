@@ -6,9 +6,19 @@
 
 typedef struct s_stack
 {
-	int				value;
+	int				*value;
 	struct s_stack	*next;
 }					t_stack;
+
+t_stack	*empty_stack(void);
+
+t_stack	*new_stack(int **value, int size);
+
+int		stack_size(t_stack *stack);
+
+void	print_stack(t_stack *stack);
+
+void	print_stack_ab(t_stack *stack_a, t_stack *stack_b);
 
 void	swap_a(t_stack **stack_a);
 

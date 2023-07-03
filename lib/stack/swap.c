@@ -6,7 +6,7 @@
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 00:43:10 by tharunthorn       #+#    #+#             */
-/*   Updated: 2023/06/13 00:57:06 by tharunthorn      ###   ########.fr       */
+/*   Updated: 2023/06/29 14:56:19 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	swap(t_stack **stack)
 {
-	int	tmp;
+	int	*tmp;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (!*stack || !(*stack)->next)
 		return ;
 	tmp = (*stack)->value;
 	(*stack)->value = (*stack)->next->value;
