@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utility.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/01 13:55:30 by tharunthorn       #+#    #+#             */
-/*   Updated: 2023/07/21 12:37:25 by tharunthorn      ###   ########.fr       */
+/*   Created: 2023/07/20 14:30:00 by tharunthorn       #+#    #+#             */
+/*   Updated: 2023/07/22 22:55:16 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "stack.h"
 
-# include "../../lib/stack/stack.h"
-# include "../../lib/libft/libft.h"
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit (1);
+}
 
-typedef struct s_stack	t_stack;
+int	get_stack_size(t_stack *stack)
+{
+	int	size;
 
-void	push_swap(t_stack *stack_a, t_stack *stack_b);
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
+}
 
-void	brute_force_sort(t_stack *stack_a, t_stack *stack_b);
-
-void	radix_sort(t_stack *stack_a, t_stack *stack_b);
-
-#endif
+int	is_sorted(t_stack *stack)
+{
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}

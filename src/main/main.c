@@ -6,39 +6,59 @@
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:52:08 by tharunthorn       #+#    #+#             */
-/*   Updated: 2023/06/29 16:19:49 by tharunthorn      ###   ########.fr       */
+/*   Updated: 2023/07/23 12:53:41 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../lib/stack/stack.h"
-#include "../../lib/libft/libft.h"
 #include "../include/push_swap.h"
+#include "../include/utility.h"
 
-void convertArguments(char **argv, int argc, int ***value, int *size)
+char	**add_front(char **argv, char *str)
 {
-	//TODO: Check if arguments are valid
-	//TODO: Check if arguments are integers
-	//TODO: Check if arguments are duplicates
-	//TODO; Change to while loop
-	*value = (int **)malloc((*size) * sizeof(int *));
+	char	**temp;
+	int		i;
 
-	for (int i = 1; i < argc; i++) {
-		(*value)[i - 1] = (int *)malloc(sizeof(int));
-		*(*value)[i - 1] = ft_atoi(argv[i]);
+	i = 0;
+	temp = (char **)malloc(sizeof(char *) * (ft_strlen(str) + 1));
+	temp[0] = ft_strdup(str);
+	while (argv[i])
+	{
+		temp[i + 1] = ft_strdup(argv[i]);
+		i++;
 	}
+	temp[i + 1] = NULL;
+	return (temp);
+}
+
+int	char_array_len(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+		i++;
+	return (i);
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		**value;
-	int		size;
+	char	**temp;
 
-	size = argc - 1;
-	convertArguments(argv, argc, &value, &argc);
-	stack_a = new_stack(value, size);
-	stack_b = empty_stack();
+	if (argc == 1 || argv[1][0] == '\0')
+		exit(1);
+	if (argc == 2 && is_split(argv))
+	{
+		ft_printf("argv[1] = %s\n", argv[1]);
+		temp = ft_split(argv[1], ' ');
+		argv = add_front(temp, argv[0]);
+		argc = char_array_len(argv);
+	}
+	if (!is_correct_input(argv))
+		print_error();
+	stack_a = new_stack(argc, argv);
+	stack_b = NULL;
 	push_swap(stack_a, stack_b);
 	return (0);
 }

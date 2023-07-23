@@ -6,7 +6,7 @@
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 08:11:25 by thmusik           #+#    #+#             */
-/*   Updated: 2023/06/07 00:29:46 by tharunthorn      ###   ########.fr       */
+/*   Updated: 2023/07/23 12:02:21 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 
 void	ft_bzero(void *s, size_t n);
 
@@ -39,6 +39,8 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 
 char	*ft_itoa(int n);
+
+long	ft_long_atoi(const char *str);
 
 void	ft_lstadd_back(t_list **lst, t_list *new);
 

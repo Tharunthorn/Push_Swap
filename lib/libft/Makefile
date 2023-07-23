@@ -6,7 +6,7 @@
 #    By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 00:52:53 by thmusik           #+#    #+#              #
-#    Updated: 2023/06/07 00:26:14 by tharunthorn      ###   ########.fr        #
+#    Updated: 2023/07/23 12:51:28 by tharunthorn      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ BOBJS			= $(BONUS:.c=.o)
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror -fsanitize=address -g
 
 NAME			= libft.a
 

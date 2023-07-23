@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utility.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/01 13:55:30 by tharunthorn       #+#    #+#             */
-/*   Updated: 2023/07/21 12:37:25 by tharunthorn      ###   ########.fr       */
+/*   Created: 2023/07/21 23:30:13 by tharunthorn       #+#    #+#             */
+/*   Updated: 2023/07/22 20:40:26 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef UTILITY_H
+# define UTILITY_H
 
-# include "../../lib/stack/stack.h"
-# include "../../lib/libft/libft.h"
+# include "../include/push_swap.h"
 
-typedef struct s_stack	t_stack;
+int	is_digit(char c);
 
-void	push_swap(t_stack *stack_a, t_stack *stack_b);
+int	is_sign(char c);
 
-void	brute_force_sort(t_stack *stack_a, t_stack *stack_b);
+int	is_correct_input(char **av);
 
-void	radix_sort(t_stack *stack_a, t_stack *stack_b);
+int	is_split(char **av);
+
+int	nbstr_cmp(const char *s1, const char *s2);
 
 #endif
