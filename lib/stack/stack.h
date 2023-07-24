@@ -6,7 +6,7 @@
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 23:57:24 by tharunthorn       #+#    #+#             */
-/*   Updated: 2023/07/23 12:06:59 by tharunthorn      ###   ########.fr       */
+/*   Updated: 2023/07/24 00:34:03 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ t_stack	*new_stack(int argc, char **argv);
 void	print_error(void);
 
 int		get_stack_size(t_stack *stack);
-
-void	free_stack(t_stack *stack);
 
 int		is_sorted(t_stack *stack);
 

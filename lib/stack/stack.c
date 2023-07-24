@@ -6,7 +6,7 @@
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 11:09:42 by tharunthorn       #+#    #+#             */
-/*   Updated: 2023/07/23 12:52:41 by tharunthorn      ###   ########.fr       */
+/*   Updated: 2023/07/24 00:33:57 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,4 @@ t_stack	*new_stack(int argc, char **argv)
 	}
 	assign_index(head, argc - 1);
 	return (head);
-}
-
-void	free_stack(t_stack *stack)
-{
-	t_stack	*ptr;
-
-	while (stack)
-	{
-		ptr = stack;
-		stack = stack->next;
-		free(ptr);
-	}
-	return ;
 }

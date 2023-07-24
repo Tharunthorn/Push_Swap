@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thmusik <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 13:57:26 by thmusik           #+#    #+#             */
-/*   Updated: 2022/09/20 21:30:53 by thmusik          ###   ########.fr       */
+/*   Updated: 2023/07/24 23:12:02 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

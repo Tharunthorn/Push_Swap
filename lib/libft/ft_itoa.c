@@ -6,11 +6,11 @@
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:35:58 by thmusik           #+#    #+#             */
-/*   Updated: 2023/06/12 12:43:39 by tharunthorn      ###   ########.fr       */
+/*   Updated: 2023/07/24 23:15:08 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 static int	ft_estim(long n)
 {

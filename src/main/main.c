@@ -6,26 +6,35 @@
 /*   By: tharunthornmusik <tharunthornmusik@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:52:08 by tharunthorn       #+#    #+#             */
-/*   Updated: 2023/07/23 12:53:41 by tharunthorn      ###   ########.fr       */
+/*   Updated: 2023/07/24 23:06:41 by tharunthorn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include "../include/utility.h"
+#include <string.h>
 
 char	**add_front(char **argv, char *str)
 {
 	char	**temp;
 	int		i;
+	int		j;
 
 	i = 0;
-	temp = (char **)malloc(sizeof(char *) * (ft_strlen(str) + 1));
-	temp[0] = ft_strdup(str);
 	while (argv[i])
-	{
-		temp[i + 1] = ft_strdup(argv[i]);
 		i++;
+	temp = (char **)malloc(sizeof(char *) * (i + 2));
+	if (!temp)
+		return (NULL);
+	temp[0] = ft_strdup(str);
+	j = 0;
+	while (j < i)
+	{
+		temp[j + 1] = ft_strdup(argv[j]);
+		free(argv[j]);
+		j++;
 	}
+	free(argv);
 	temp[i + 1] = NULL;
 	return (temp);
 }
@@ -40,17 +49,36 @@ int	char_array_len(char **argv)
 	return (i);
 }
 
+int	is_number(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	if (ft_long_atoi(str) > INT_MAX || ft_long_atoi(str) < INT_MIN)
+		print_error();
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	**temp;
 
-	if (argc == 1 || argv[1][0] == '\0')
-		exit(1);
+	if (argc == 1 || argv[1][0] == '\0' || (argc == 2 && is_number(argv[1])))
+		return (0);
 	if (argc == 2 && is_split(argv))
 	{
-		ft_printf("argv[1] = %s\n", argv[1]);
 		temp = ft_split(argv[1], ' ');
 		argv = add_front(temp, argv[0]);
 		argc = char_array_len(argv);
